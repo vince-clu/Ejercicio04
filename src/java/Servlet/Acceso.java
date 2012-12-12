@@ -40,7 +40,7 @@ public class Acceso extends HttpServlet {
            }
            
             if(user.equals("vin") && pass.equals("vin")){
-               response.sendRedirect("vin.jsp");
+                               response.sendRedirect("vin.jsp");
 
            }else{
                 response.sendRedirect("index.jsp");
