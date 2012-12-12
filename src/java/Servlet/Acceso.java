@@ -47,10 +47,18 @@ public class Acceso extends HttpServlet {
                 
             }
      
+                String formVin = request.getParameter("dato");
+                request.setAttribute("formVin", formVin);
+                getServletContext().getRequestDispatcher("/vin2.jsp")
+                        .forward(request, response);
+            
         } finally {            
             out.close();
         }
     }
+    
+    
+
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**

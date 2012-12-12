@@ -11,13 +11,16 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Vin JSP</title>
     </head>
+
+    
     <body>
         
         <form action="Acceso" method="post">
             
             <p>Escribe algo:</p>
-            <input type="text">
+            <input type="text" name="dato">
             <input type="submit" value="Enviar">
+ 
 
         </form>
         
