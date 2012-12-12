@@ -12,7 +12,7 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <h1>Hello World!</h1>
+        <h1>Calcula el cuadrado de tu número</h1>
         <form action="/Ejercicio04/Acceso" method="POST">
             <input type="text" name="numero">
             <input type="submit" value="Calcula">
