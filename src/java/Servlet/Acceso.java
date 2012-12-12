@@ -6,6 +6,8 @@ package Servlet;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -34,25 +36,18 @@ public class Acceso extends HttpServlet {
         String user = request.getParameter("user");
         String pass = request.getParameter("pass");
         try {
-           if(user.equals("manu") && pass.equals("manu")){
-               response.sendRedirect("manu.jsp");
+            if (user.equals("manu") && pass.equals("manu")) {
+                response.sendRedirect("manu.jsp");
 
-           }
-           
-            if(user.equals("vin") && pass.equals("vin")){
-                               response.sendRedirect("vin.jsp");
+            } else if (user.equals("vin") && pass.equals("vin")) {
+                response.sendRedirect("vin.jsp");
 
-           }else{
+            } else {
                 response.sendRedirect("index.jsp");
-                
+
             }
-     
-                String formVin = request.getParameter("dato");
-                request.setAttribute("formVin", formVin);
-                getServletContext().getRequestDispatcher("/vin2.jsp")
-                        .forward(request, response);
-            
-        } finally {            
+
+        } finally {
             out.close();
         }
     }
@@ -88,7 +83,22 @@ public class Acceso extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+
+        String nume = request.getParameter("numero");
+        int num = Integer.parseInt(nume);
+
+        int cuadrado = 0;
+
+        cuadrado = num * num;
+
+        request.setAttribute("cuadrado", cuadrado);
+        request.setAttribute("num", num);
+
+        ServletContext cont = getServletConfig().getServletContext();
+        RequestDispatcher reqDispatcher = cont.getRequestDispatcher("/cuadrado.jsp");
+        reqDispatcher.forward(request, response);
         processRequest(request, response);
+
     }
 
     /**
