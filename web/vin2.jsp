@@ -13,7 +13,7 @@
     </head>
     
     <%
-        String formVin= (String) request.getParameter("dato");
+        String formVin= (String) request.getParameter("formVin");
         
     %>
     <body>

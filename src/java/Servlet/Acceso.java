@@ -69,6 +69,12 @@ public class Acceso extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         processRequest(request, response);
+        
+        String formVin = request.getParameter("dato");
+        request.setAttribute("formVin", formVin);
+        getServletContext().getRequestDispatcher("/vin2.jsp")
+                        .forward(request, response);
+        
     }
 
     /**

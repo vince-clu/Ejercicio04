@@ -15,7 +15,7 @@
     
     <body>
         
-        <form action="Acceso" method="post">
+        <form action="Acceso" method="get">
             
             <p>Escribe algo:</p>
             <input type="text" name="dato">
