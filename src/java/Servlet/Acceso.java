@@ -31,11 +31,22 @@ public class Acceso extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
+        String user = request.getParameter("user");
+        String pass = request.getParameter("pass");
         try {
+           if(user.equals("manu") && pass.equals("manu")){
+               response.sendRedirect("manu.jsp");
+
+           }
            
-            
-            
-            
+            if(user.equals("vin") && pass.equals("vin")){
+               response.sendRedirect("vin.jsp");
+
+           }else{
+                response.sendRedirect("index.jsp");
+                
+            }
+     
         } finally {            
             out.close();
         }
