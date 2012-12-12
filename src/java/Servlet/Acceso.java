@@ -80,7 +80,7 @@ public class Acceso extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+
         String nume = request.getParameter("numero");
         int num = Integer.parseInt(nume);
 
@@ -89,12 +89,12 @@ public class Acceso extends HttpServlet {
         cuadrado = num * num;
 
         request.setAttribute("cuadrado", cuadrado);
+        request.setAttribute("num", num);
 
         ServletContext cont = getServletConfig().getServletContext();
-        RequestDispatcher reqDispatcher = cont.getRequestDispatcher("cuadrado.jsp");
+        RequestDispatcher reqDispatcher = cont.getRequestDispatcher("/cuadrado.jsp");
         reqDispatcher.forward(request, response);
-
-
+        processRequest(request, response);
 
     }
 
