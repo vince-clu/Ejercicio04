@@ -12,6 +12,14 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <h1>Hello World!</h1>
+        <h1>Bienvenido al proyecto</h1>
+        <form action="/Ejercicio04/Acceso">
+         Usuario :   <input type="text" name="user" /><br/>
+         Password : <input type="password" name="pass" /><br/>
+         <input type="submit" name="Enviar"/>
+         <input type="reset" name="Borrar"/>
+        </form>
+        
+        
     </body>
 </html>
