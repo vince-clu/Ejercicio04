@@ -13,5 +13,6 @@
     </head>
     <body>
         <h1>Hello Jota</h1>
+        Has escrito <%= request.getAttribute("nombre") %>
     </body>
 </html>

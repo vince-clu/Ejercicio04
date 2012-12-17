@@ -39,8 +39,8 @@ public class Acceso extends HttpServlet {
             if (user.equals("admin") && pass.equals("admin")) {
                 response.sendRedirect("manu.jsp");
 
-            }else{
-                
+            } else {
+
                 response.sendRedirect("index.jsp");
             }
 
@@ -48,12 +48,9 @@ public class Acceso extends HttpServlet {
             out.close();
         }
 
-        
-        
-    }
-    
-    
 
+
+    }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
@@ -67,11 +64,11 @@ public class Acceso extends HttpServlet {
      */
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {    
+            throws ServletException, IOException {
         processRequest(request, response);
-        
-             //   String inputText = request.getParameter("dato");
-               // String form= request.getParameter("form");
+
+        //   String inputText = request.getParameter("dato");
+        // String form= request.getParameter("form");
 //                 getServletContext().getRequestDispatcher("/jotaesepe.jsp")
 //                        .forward(request, response);
     }
@@ -89,18 +86,34 @@ public class Acceso extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
-        String nume = request.getParameter("numero");
-        int num = Integer.parseInt(nume);
+        String accion = request.getParameter("form");
+        String destino = null;
 
-        int cuadrado = 0;
+        switch (accion) {
+            case "form1":
+                String nume = request.getParameter("numero");
+                int num = Integer.parseInt(nume);
 
-        cuadrado = num * num;
+                int cuadrado = 0;
 
-        request.setAttribute("cuadrado", cuadrado);
-        request.setAttribute("num", num);
+                cuadrado = num * num;
+
+                request.setAttribute("cuadrado", cuadrado);
+                request.setAttribute("num", num);
+                destino = "/cuadrado.jsp";
+                break;
+            case "form2":
+                String nombre = request.getParameter("dato");
+                
+                request.setAttribute("nombre", nombre);
+                
+                destino = "/jotaesepe.jsp";
+        }
+
+
 
         ServletContext cont = getServletConfig().getServletContext();
-        RequestDispatcher reqDispatcher = cont.getRequestDispatcher("/cuadrado.jsp");
+        RequestDispatcher reqDispatcher = cont.getRequestDispatcher(destino);
         reqDispatcher.forward(request, response);
         processRequest(request, response);
 

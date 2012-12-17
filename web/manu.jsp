@@ -19,7 +19,7 @@
             <input type="hidden" value="form1" name="form">
         </form>
         
-       <form action="Acceso" method="get">
+       <form action="Acceso" method="post">
             
             <p>Escribe algo capullo:</p>
             <input type="text" name="dato">
