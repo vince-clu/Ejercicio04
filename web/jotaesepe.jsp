@@ -1,6 +1,6 @@
 <%-- 
-    Document   : vin2
-    Created on : 12-dic-2012, 18:03:59
+    Document   : jotaesepe
+    Created on : 17-dic-2012, 16:17:50
     Author     : vesprada
 --%>
 
@@ -11,12 +11,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
     </head>
-    
-    <%
-        String formVin= (String) request.getParameter("formVin");
-        
-    %>
     <body>
-        <h1>Hello <%=formVin%> </h1>
+        <h1>Hello Jota</h1>
     </body>
 </html>

@@ -36,20 +36,20 @@ public class Acceso extends HttpServlet {
         String user = request.getParameter("user");
         String pass = request.getParameter("pass");
         try {
-            if (user.equals("manu") && pass.equals("manu")) {
+            if (user.equals("admin") && pass.equals("admin")) {
                 response.sendRedirect("manu.jsp");
 
-            } else if (user.equals("vin") && pass.equals("vin")) {
-                response.sendRedirect("vin.jsp");
-
-            } else {
+            }else{
+                
                 response.sendRedirect("index.jsp");
-
             }
 
         } finally {
             out.close();
         }
+
+        
+        
     }
     
     
@@ -67,14 +67,13 @@ public class Acceso extends HttpServlet {
      */
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
+            throws ServletException, IOException {    
         processRequest(request, response);
         
-        String formVin = request.getParameter("dato");
-        request.setAttribute("formVin", formVin);
-        getServletContext().getRequestDispatcher("/vin2.jsp")
-                        .forward(request, response);
-        
+             //   String inputText = request.getParameter("dato");
+               // String form= request.getParameter("form");
+//                 getServletContext().getRequestDispatcher("/jotaesepe.jsp")
+//                        .forward(request, response);
     }
 
     /**
