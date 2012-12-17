@@ -21,7 +21,7 @@
         
        <form action="Acceso" method="get">
             
-            <p>Escribe algo:</p>
+            <p>Escribe algo capullo:</p>
             <input type="text" name="dato">
             <input type="submit" value="Enviar">
             <input type="hidden" value="form2" name="form">
