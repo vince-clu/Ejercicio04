@@ -16,6 +16,17 @@
         <form action="/Ejercicio04/Acceso" method="POST">
             <input type="text" name="numero">
             <input type="submit" value="Calcula">
+            <input type="hidden" value="form1" name="form">
+        </form>
+        
+       <form action="Acceso" method="get">
+            
+            <p>Escribe algo:</p>
+            <input type="text" name="dato">
+            <input type="submit" value="Enviar">
+            <input type="hidden" value="form2" name="form">
+ 
+
         </form>
     </body>
 </html>
